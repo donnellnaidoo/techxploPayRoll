@@ -61,6 +61,7 @@ const AuthForm: React.FC = () => {
         confirmPassword: '',
         role: 'employee'
       })
+    } catch (error: any) {
       toast.error(error.message || 'Registration failed')
     } finally {
       setIsLoading(false)
