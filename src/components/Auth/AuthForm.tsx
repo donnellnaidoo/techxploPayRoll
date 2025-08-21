@@ -27,7 +27,7 @@ const AuthForm: React.FC = () => {
       await signIn(formData.email, formData.password)
       toast.success('Signed in successfully!')
     } catch (error: any) {
-      if (error.message === 'Email not confirmed') {
+      if (error.message === 'Email not confirmed' || error.message.includes('email_not_confirmed')) {
         toast.error('Please check your email for a confirmation link to activate your account.')
       } else {
         toast.error(error.message || 'Invalid credentials')
